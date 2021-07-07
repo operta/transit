@@ -1,2 +1,12 @@
-<p>tunnel-round-detail-page works!</p>
-<button (click)="goTo()">TEST</button>
+<ng-container *ngIf="shift && round">
+    <div class="row">
+        <div class="col-md-6">
+            <app-shift-display [shift]="shift"></app-shift-display>
+        </div>
+        <div class="col-md-6">
+            <app-tunnel-round-display [tunnelRound]="round"></app-tunnel-round-display>
+        </div>
+    </div>
+    <app-activities [shift]="shift" [round]="round"></app-activities>
+</ng-container>
+

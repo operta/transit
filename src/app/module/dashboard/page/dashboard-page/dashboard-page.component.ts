@@ -6,6 +6,7 @@ import {
 } from '@angular/router';
 import {AuthenticationService} from '../../../authentication/authentication.service';
 import {filter} from 'rxjs/operators';
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-dashboard-page',
@@ -15,7 +16,10 @@ import {filter} from 'rxjs/operators';
 export class DashboardPageComponent {
     title = 'Shift Report';
 
-    constructor(private router: Router, private route: ActivatedRoute, private authService: AuthenticationService) {
+    constructor(private router: Router,
+                private route: ActivatedRoute,
+                private authService: AuthenticationService,
+                private location: Location) {
         // listening to route changes of child components in order to set the current title of dashboard
         this.router.events.pipe(
             filter(event => event instanceof ChildActivationEnd)
@@ -26,7 +30,10 @@ export class DashboardPageComponent {
 
     logout(): void {
         this.authService.clearAuthData();
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/login');
     }
 
+    back(): void {
+        this.location.back();
+    }
 }

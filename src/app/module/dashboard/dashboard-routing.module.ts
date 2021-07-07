@@ -23,10 +23,10 @@ const dashboardRoutes: Routes = [
         }
       },
       {
-        path: 'tunnel-round/:tunnelId',
+        path: 'tunnel-round/:roundId/shift/:shiftId',
         component: TunnelRoundDetailPageComponent,
         data: {
-          title: 'Tunnel Round'
+          title: 'Tunnel Round Report'
         }
       }
     ]

@@ -1,8 +1,11 @@
 <mat-toolbar>
   <mat-toolbar-row>
+      <button mat-icon-button  (click)="back()">
+          <mat-icon>keyboard_backspace</mat-icon>
+      </button>
     <span class="toolbar-text-center">{{title}}</span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" (click)="logout()">
-      <mat-icon>power_settings_new</mat-icon>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
