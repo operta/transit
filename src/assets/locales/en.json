@@ -1,0 +1,10 @@
+{
+    "login": "Login",
+    "loginForm": "Login Form",
+    "username": "Username",
+    "password": "Password",
+    "accessDenied": "Access Denied, authentication required",
+    "close": "Close",
+    "employeeNotExist": "Your employee profile is not complete, please contact the administrator",
+
+}
