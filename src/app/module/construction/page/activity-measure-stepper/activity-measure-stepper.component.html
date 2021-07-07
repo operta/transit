@@ -1,6 +1,6 @@
 <mat-toolbar>
     <mat-toolbar-row>
-        <span class="toolbar-text-center">Add activity to tunnel round</span>
+        <span class="toolbar-text-center">{{'addActivityToTunnelRound' | translate}}</span>
         <button mat-icon-button (click)="finish()">
             <mat-icon>clear</mat-icon>
         </button>
@@ -9,19 +9,19 @@
 <ng-container *ngIf="round">
     <mat-vertical-stepper [linear]="true">
         <mat-step [stepControl]="stepperFormGroup">
-            <ng-template matStepLabel>Add activity</ng-template>
+            <ng-template matStepLabel>{{'addActivity' | translate}}</ng-template>
             <app-add-activity [parentForm]="stepperFormGroup" [shift]="shift" [round]="round" [activities]="activities"></app-add-activity>
             <br>
             <div align="end">
-                <button class="btn btn-lg btn-primary" matStepperNext [disabled]="stepperFormGroup.get('activity').invalid">Next</button>
+                <button class="btn btn-lg btn-primary" matStepperNext [disabled]="stepperFormGroup.get('activity').invalid">{{'next' | translate}}</button>
             </div>
         </mat-step>
         <mat-step [stepControl]="stepperFormGroup" [optional]="true">
-            <ng-template matStepLabel>Add measures</ng-template>
+            <ng-template matStepLabel>{{'addMeasures' | translate}}</ng-template>
             <app-add-measure [parentForm]="stepperFormGroup" [roundId]="round.id"></app-add-measure>
             <div align="end">
-                <button class="btn btn-lg btn-primary" matStepperPrevious>Back</button>&nbsp;
-                <button class="btn btn-lg btn-success" [disabled]="stepperFormGroup.invalid" (click)="createActivityAndMeasures()">Save</button>
+                <button class="btn btn-lg btn-primary" matStepperPrevious>{{'back' | translate}}</button>&nbsp;
+                <button class="btn btn-lg btn-success" [disabled]="stepperFormGroup.invalid" (click)="createActivityAndMeasures()">{{'save' | translate}}</button>
             </div>
         </mat-step>
     </mat-vertical-stepper>

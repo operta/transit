@@ -4,6 +4,7 @@ import {Activity} from '../../model/activity';
 import * as moment from 'moment';
 import {ConstructionService} from '../../construction.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-timetable',
@@ -18,7 +19,8 @@ export class TimetableComponent implements OnInit {
     hourSlots: any[] = [];
 
     constructor(private constructionService: ConstructionService,
-                private snackBar: MatSnackBar) {
+                private snackBar: MatSnackBar,
+                private translateService: TranslateService) {
     }
 
     ngOnInit(): void {
@@ -64,7 +66,9 @@ export class TimetableComponent implements OnInit {
         this.constructionService.deleteActivity(id)
             .subscribe(res => {
                 this.activityDeleted.emit();
-                this.snackBar.open('Activity deleted', 'Close');
+                const activityDeletedMessage = this.translateService.instant('activityDeleted');
+                const closeMessage = this.translateService.instant('close');
+                this.snackBar.open(activityDeletedMessage, closeMessage);
             });
     }
 

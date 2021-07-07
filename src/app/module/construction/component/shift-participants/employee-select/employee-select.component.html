@@ -1,6 +1,6 @@
 <div class="btn-block">
     <mat-form-field appearance="outline">
-        <mat-label>Select employee</mat-label>
+        <mat-label>{{'selectEmployee' | translate}}</mat-label>
         <mat-select (selectionChange)="onSelectEmployee($event)">
             <mat-option *ngFor="let employee of employees$ | async" [value]="employee.id">
                 {{employee.name}}
@@ -9,7 +9,7 @@
     </mat-form-field>
     &nbsp;
     <mat-form-field appearance="outline">
-        <mat-label>Select role</mat-label>
+        <mat-label>{{'selectRole' | translate}}</mat-label>
         <mat-select (selectionChange)="onSelectRole($event)">
             <mat-option *ngFor="let role of roles" [value]="role">
                 {{role}}
@@ -18,7 +18,7 @@
     </mat-form-field>
     &nbsp;
     <button class="btn btn-success"  [disabled]="!selectedEmployee || !selectedRole" (click)="addEmployeeToShift()">
-        <span>Add <mat-icon>add</mat-icon></span>
+        <span>{{'add' | translate}} <mat-icon>add</mat-icon></span>
     </button>
 </div>
 

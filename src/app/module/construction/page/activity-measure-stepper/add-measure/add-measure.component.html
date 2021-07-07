@@ -10,8 +10,8 @@
                             </div>
                             <div class="col-md-12 mb-4">
                                 <mat-form-field appearance="outline">
-                                    <mat-label>Quantity</mat-label>
-                                    <input matInput type="number"  placeholder="Quantity" name="quantity" formControlName="quantity">
+                                    <mat-label>{{'quantity' | translate}}</mat-label>
+                                    <input matInput type="number"  placeholder="{{'quantity' | translate}}" name="quantity" formControlName="quantity">
                                 </mat-form-field>
                             </div>
                         </div>
@@ -19,7 +19,7 @@
                 </mat-card-content>
                 <mat-card-actions align="end">
                     <button class="btn btn-success" [disabled]="measureFormGroup.invalid" (click)="addMeasure()">
-                        Add<mat-icon>add</mat-icon>
+                        {{'add' | translate}}<mat-icon>add</mat-icon>
                     </button>
                 </mat-card-actions>
             </mat-card>

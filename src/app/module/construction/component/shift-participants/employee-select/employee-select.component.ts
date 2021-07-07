@@ -5,13 +5,13 @@ import {Observable} from 'rxjs';
 import {ShiftParticipation} from '../../../model/shift-participation';
 import {map} from 'rxjs/operators';
 
-
 @Component({
     selector: 'app-employee-select',
     templateUrl: './employee-select.component.html',
     styleUrls: ['./employee-select.component.css']
 })
 export class EmployeeSelectComponent implements OnInit, OnChanges {
+    // TODO translate roles
     roles = [
         'worker',
         'foreman'

@@ -4,6 +4,7 @@ import {ConstructionService} from '../../construction.service';
 import {Shift} from '../../model/shift';
 import {Observable, of} from 'rxjs';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-shift-select',
@@ -16,7 +17,8 @@ export class ShiftSelectComponent implements OnChanges {
     openShifts$: Observable<Shift[]>;
 
     constructor(private constructionService: ConstructionService,
-                private snackBar: MatSnackBar) {
+                private snackBar: MatSnackBar,
+                private translateService: TranslateService) {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -58,7 +60,9 @@ export class ShiftSelectComponent implements OnChanges {
             newShift.endDateTime = moment(newShift.startDateTime).add(8, 'hour');
         }
         this.constructionService.createShift(newShift).subscribe(res => {
-            this.snackBar.open('Created a new shift', 'Close');
+            const createdShiftMessage = this.translateService.instant('createdShift');
+            const closeMessage = this.translateService.instant('close');
+            this.snackBar.open(createdShiftMessage, closeMessage);
             this.loadOpenShifts();
         });
     }

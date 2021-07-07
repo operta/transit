@@ -10,6 +10,7 @@ import * as moment from 'moment';
 import {forkJoin, Observable} from 'rxjs';
 import {Measure} from '../../model/measure';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
     selector: 'app-activity-measure-stepper',
@@ -27,7 +28,8 @@ export class ActivityMeasureStepperComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private constructionService: ConstructionService,
                 private location: Location,
-                private snackBar: MatSnackBar) {
+                private snackBar: MatSnackBar,
+                private translateService: TranslateService) {
         this.route.params.subscribe(params => {
             this.shiftId = +params.shiftId;
             this.roundId = +params.roundId;
@@ -58,7 +60,9 @@ export class ActivityMeasureStepperComponent implements OnInit {
                 this.createMeasures(activityId).subscribe((res) => {
                 }, () => {
                 }, () => {
-                    this.snackBar.open('Activity saved', 'Close');
+                    const activitySavedMessage = this.translateService.instant('activitySaved');
+                    const closedMessage = this.translateService.instant('closed');
+                    this.snackBar.open(activitySavedMessage, closedMessage);
                     this.finish();
                 });
             });

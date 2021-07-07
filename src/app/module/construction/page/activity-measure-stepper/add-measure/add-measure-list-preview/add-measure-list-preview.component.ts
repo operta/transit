@@ -20,7 +20,6 @@ export class AddMeasureListPreviewComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.formArray)
     }
 
     deleteElement(index: number): void {

@@ -24,6 +24,7 @@ import { SectionDisplayComponent } from './component/section-display/section-dis
 import { ShiftDisplayComponent } from './component/shift-display/shift-display.component';
 import { SupportDefinitionDisplayComponent } from './component/support-definition-display/support-definition-display.component';
 import { TunnelRoundDisplayComponent } from './component/tunnel-round-display/tunnel-round-display.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { TunnelRoundDisplayComponent } from './component/tunnel-round-display/tu
         ReactiveFormsModule,
         FormsModule,
         NgxMaterialTimepickerModule,
-        ConstructionRoutingModule
+        ConstructionRoutingModule,
+        TranslateModule
     ],
     providers: [
         ConstructionService

@@ -1,24 +1,23 @@
-
 <mat-card>
-    <mat-card-subtitle>Tunnel Rounds</mat-card-subtitle>
+    <mat-card-subtitle>{{'tunnelRounds' | translate}}</mat-card-subtitle>
     <mat-card-content>
         <table mat-table [dataSource]="tunnelRounds" class="mat-elevation-z8">
 
             <!-- Name Column -->
             <ng-container matColumnDef="column-startChainage">
-                <th mat-header-cell *matHeaderCellDef> Start chainage </th>
+                <th mat-header-cell *matHeaderCellDef> {{'startChainage' | translate}} </th>
                 <td mat-cell *matCellDef="let element"> {{element.startChainage}} m</td>
             </ng-container>
 
             <!-- Role Column -->
             <ng-container matColumnDef="column-endChainage">
-                <th mat-header-cell *matHeaderCellDef> End chainage </th>
+                <th mat-header-cell *matHeaderCellDef> {{'endChainage' | translate}} </th>
                 <td mat-cell *matCellDef="let element"> {{element.endChainage}} m</td>
             </ng-container>
 
             <ng-container matColumnDef="column-action">
-                <th mat-header-cell *matHeaderCellDef> Action </th>
-                <td mat-cell *matCellDef="let element"><button class="btn btn-primary" (click)="goToTunnelRound(element.id)">View <mat-icon>pageview</mat-icon></button> </td>
+                <th mat-header-cell *matHeaderCellDef> {{'action' | translate}} </th>
+                <td mat-cell *matCellDef="let element"><button class="btn btn-primary" (click)="goToTunnelRound(element.id)">{{'view' | translate}} <mat-icon>pageview</mat-icon></button> </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

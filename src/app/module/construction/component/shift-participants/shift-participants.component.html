@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-subtitle>Shift participants</mat-card-subtitle>
+    <mat-card-subtitle>{{'shiftParticipants' | translate}}</mat-card-subtitle>
     <mat-card-content>
         <app-employee-select (employeeAddedToShift)="loadShiftParticipants()" [shiftParticipants]="participants"
                              [shiftId]="shift.id"></app-employee-select>
@@ -8,21 +8,21 @@
 
             <!-- Name Column -->
             <ng-container matColumnDef="column-name">
-                <th mat-header-cell *matHeaderCellDef> Name</th>
+                <th mat-header-cell *matHeaderCellDef> {{'name' | translate}}</th>
                 <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
 
             <!-- Role Column -->
             <ng-container matColumnDef="column-role">
-                <th mat-header-cell *matHeaderCellDef> Role</th>
+                <th mat-header-cell *matHeaderCellDef> {{'role' | translate}}</th>
                 <td mat-cell *matCellDef="let element"> {{element.role}} </td>
             </ng-container>
 
             <!-- Action Column -->
             <ng-container matColumnDef="column-action">
-                <th mat-header-cell *matHeaderCellDef> Action</th>
+                <th mat-header-cell *matHeaderCellDef> {{'action' | translate}}</th>
                 <td mat-cell *matCellDef="let element">
-                    <button class="btn btn-danger" (click)="deleteParticipant(element.id)">Delete
+                    <button class="btn btn-danger" (click)="deleteParticipant(element.id)">{{'delete' | translate}}
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>

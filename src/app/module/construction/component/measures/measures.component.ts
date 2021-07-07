@@ -1,8 +1,7 @@
-import {ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ConstructionService} from '../../construction.service';
 import {Measure} from '../../model/measure';
 import {Activity} from '../../model/activity';
-import {forkJoin} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Component({
