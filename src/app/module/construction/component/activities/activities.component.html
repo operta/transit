@@ -1,0 +1,21 @@
+<ng-container *ngIf="round && shift && activities">
+
+
+    <!--            TODO add tunnel round-->
+    <!--    TODO add measure separate-->
+    <!--    TODO comments-->
+    <!--            TODO translate-->
+
+    <button class="btn btn-lg btn-success" (click)="goToStepper()">Add new activity</button>
+    <ng-container *ngIf="activities && activities.length > 0">
+        <app-timetable [activities]="activities" [shift]="shift" (activityDeleted)="onActivityDeleted()"></app-timetable>
+        <div class="row">
+            <div class="col-md-6 custom-border">
+                <app-measures [activities]="activities" [roundId]="round.id"></app-measures>
+            </div>
+        </div>
+    </ng-container>
+
+
+</ng-container>
+

@@ -1,0 +1,25 @@
+<table cellspacing="0" align="center">
+    <tr>
+        <td align="center" height="50"><br>
+            <b>Activity/Period</b>
+        </td>
+        <td align="center" height="50"><br>
+            <b>Action</b>
+        </td>
+        <td align="left" height="50" *ngFor="let slot of hourSlots" colspan="4">
+            <b>{{slot}}</b>
+        </td>
+    </tr>
+    <tr *ngFor="let activity of activities">
+        <td align="center" height="50">
+            <b>{{activity.typeName}}</b>
+        </td>
+        <td align="center" height="50">
+            <button class="btn btn-danger" (click)="deleteActivity(activity.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+        <td align="center" height="50" width="100" *ngFor="let slot of slots"  [ngStyle]="{'background-color':isActivityInSlot(activity, slot.dateTime)? 'blue' : 'white'}">
+        </td>
+    </tr>
+</table>

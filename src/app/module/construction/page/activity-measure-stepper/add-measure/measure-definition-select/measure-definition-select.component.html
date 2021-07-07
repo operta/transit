@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline">
+    <mat-label>Select measure</mat-label>
+    <mat-select (selectionChange)="onDefinitionSelect($event)" [formControl]="formGroup.get('measureDefinition')">
+        <mat-option *ngFor="let definition of definitions$ | async" [value]="definition.id">
+            {{definition.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

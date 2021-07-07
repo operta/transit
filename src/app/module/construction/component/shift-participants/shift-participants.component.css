@@ -1,0 +1,8 @@
+.mat-column-column-name, .mat-column-column-role, .mat-column-column-action {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+mat-card {
+    box-shadow: none !important;
+}

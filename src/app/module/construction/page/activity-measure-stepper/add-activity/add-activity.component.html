@@ -1,0 +1,43 @@
+<ng-container *ngIf="shift && round && activityFormGroup">
+    <mat-card>
+        <mat-card-content class="text-center">
+            <form [formGroup]="activityFormGroup">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <app-activity-type-select [formGroup]="activityFormGroup"></app-activity-type-select>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <mat-form-field  appearance="outline">
+                            <mat-label>Start time</mat-label>
+                            <input matInput id="timeInput" [ngxTimepicker]="toggleTimepicker"
+                                   [format]="24"
+                                   [min]="minTime" [max]="maxTime"
+                                   formControlName="activityStartTime"
+                                   readonly>
+                        </mat-form-field>
+                        <ngx-material-timepicker #toggleTimepicker [minutesGap]="15"></ngx-material-timepicker>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                            <div class="btn-block">
+                                <button class="btn btn-lg btn-danger btn-position-fix" (click)="subtractDuration()">-</button>
+                                &nbsp;
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Duration</mat-label>
+                                    <input  matInput type="number" step="15" min="15" formControlName="duration"/>
+                                </mat-form-field>
+                                &nbsp;
+                                <button class="btn btn-lg btn-success btn-position-fix" (click)="addDuration()">+</button>
+                            </div>
+                    </div>
+                    <div class="col-md-12 mb-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Add a comment</mat-label>
+                            <textarea matInput formControlName="comment"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+

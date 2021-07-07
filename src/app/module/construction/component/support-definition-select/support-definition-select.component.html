@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline">
+    <mat-label>Select support definition</mat-label>
+    <mat-select (selectionChange)="onDefinitionSelected($event)">
+        <mat-option *ngFor="let definition of definitions$ | async" [value]="definition">
+            {{definition.name}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
