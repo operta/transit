@@ -1,5 +1,5 @@
 <mat-form-field appearance="outline">
-    <mat-label>Select activity type</mat-label>
+    <mat-label>{{'selectActivityType' | translate}}</mat-label>
     <mat-select (selectionChange)="onSelectType($event)" [formControl]="formGroup.get('type')">
         <mat-option *ngFor="let type of types$ | async" [value]="type.id">
             {{type.name}}

@@ -61,7 +61,7 @@ export class ActivityMeasureStepperComponent implements OnInit {
                 }, () => {
                 }, () => {
                     const activitySavedMessage = this.translateService.instant('activitySaved');
-                    const closedMessage = this.translateService.instant('closed');
+                    const closedMessage = this.translateService.instant('close');
                     this.snackBar.open(activitySavedMessage, closedMessage);
                     this.finish();
                 });

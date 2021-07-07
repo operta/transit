@@ -11,7 +11,6 @@ import {map} from 'rxjs/operators';
     styleUrls: ['./employee-select.component.css']
 })
 export class EmployeeSelectComponent implements OnInit, OnChanges {
-    // TODO translate roles
     roles = [
         'worker',
         'foreman'

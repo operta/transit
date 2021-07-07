@@ -1,6 +1,12 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <span class="toolbar-text-center">TransIT</span>
+      <mat-form-field appearance="outline">
+          <mat-select (selectionChange)="onSelectLang($event)" [(value)]="selectedLang">
+              <mat-option [value]="'en'">{{'english' | translate}}</mat-option>
+              <mat-option [value]="'de'">{{'german' | translate}}</mat-option>
+          </mat-select>
+      </mat-form-field>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="wrapper">

@@ -3,11 +3,11 @@ import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest}
 import {Observable, of, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable()
 export class AppErrorInterceptor implements HttpInterceptor {
-    constructor(private snackBar: MatSnackBar, private router: Router){
+    constructor(private snackBar: MatSnackBar, private translateService: TranslateService){
     }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let handled = false;
@@ -33,7 +33,9 @@ export class AppErrorInterceptor implements HttpInterceptor {
                           this.snackBar.open(errorMessage, 'Close');
                           return throwError(errorMessage);
                       } else {
-                          this.snackBar.open('Unexpected problem occurred', 'Close');
+                          const problemMessage = this.translateService.instant('error');
+                          const closeMessage = this.translateService.instant('close');
+                          this.snackBar.open(problemMessage, closeMessage);
                           return throwError('Unexpected problem occurred');
                       }
                   }
@@ -49,7 +51,6 @@ export class AppErrorInterceptor implements HttpInterceptor {
         switch (error.status) {
             case 401:
                 this.snackBar.open('You need to be authorized to access this resource', 'Close');
-                // this.router.navigateByUrl('/');
                 handled = true;
                 break;
         }

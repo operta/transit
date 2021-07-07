@@ -12,7 +12,7 @@
         <mat-label>{{'selectRole' | translate}}</mat-label>
         <mat-select (selectionChange)="onSelectRole($event)">
             <mat-option *ngFor="let role of roles" [value]="role">
-                {{role}}
+                {{role | translate}}
             </mat-option>
         </mat-select>
     </mat-form-field>

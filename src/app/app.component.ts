@@ -11,6 +11,6 @@ export class AppComponent {
     title = 'TransIT';
 
     constructor(private localizationService: LocalizationService) {
-        this.localizationService.useLanguage('en');
+        this.localizationService.useLanguage('de');
     }
 }
