@@ -21,7 +21,6 @@ interface ILoginData {
     password: string;
 }
 
-
 @Injectable()
 export class AuthenticationService {
 

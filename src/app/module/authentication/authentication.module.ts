@@ -8,6 +8,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './auth.interceptor';
 import {AuthGuard} from './guard/auth.guard';
 import {UserDataGuard} from './guard/user-data.guard';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -18,17 +19,16 @@ import {UserDataGuard} from './guard/user-data.guard';
         CommonModule,
         UiModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        TranslateModule
     ],
     providers: [
         AuthenticationService,
-
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true
         },
-
         AuthGuard,
         UserDataGuard
     ]
