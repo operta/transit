@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-md-12 mb-4">
                         <mat-form-field  appearance="outline">
-                            <mat-label>Start time</mat-label>
+                            <mat-label>{{'startTime' | translate}}</mat-label>
                             <input matInput id="timeInput" [ngxTimepicker]="toggleTimepicker"
                                    [format]="24"
                                    [min]="minTime" [max]="maxTime"
@@ -22,7 +22,7 @@
                                 <button class="btn btn-lg btn-danger btn-position-fix" (click)="subtractDuration()">-</button>
                                 &nbsp;
                                 <mat-form-field appearance="outline">
-                                    <mat-label>Duration</mat-label>
+                                    <mat-label>{{'duration' | translate}}</mat-label>
                                     <input  matInput type="number" step="15" min="15" formControlName="duration"/>
                                 </mat-form-field>
                                 &nbsp;
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-md-12 mb-4">
                         <mat-form-field appearance="outline">
-                            <mat-label>Add a comment</mat-label>
+                            <mat-label>{{'addComment' | translate}}</mat-label>
                             <textarea matInput formControlName="comment"></textarea>
                         </mat-form-field>
                     </div>

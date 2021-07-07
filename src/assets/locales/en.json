@@ -44,5 +44,10 @@
     "type": "Type",
     "tunnelingClass": "Tunneling Class",
     "createdShift": "Created a new shift",
-    "shiftParticipants": "Shift Participants"
+    "shiftParticipants": "Shift Participants",
+    "error": "Unexpected problem occurred",
+    "startTime": "Start Time",
+    "duration": "Duration",
+    "addComment": "Add comment",
+    "selectActivityType": "Select activity type"
 }
