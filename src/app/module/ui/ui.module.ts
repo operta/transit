@@ -7,6 +7,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -19,6 +24,11 @@ import {MatSelectModule} from '@angular/material/select';
         MatSnackBarModule,
         MatIconModule,
         MatSelectModule,
+        MatDatepickerModule,
+        MatMomentDateModule,
+        MatTableModule,
+        MatGridListModule,
+        MatStepperModule
     ],
     exports: [
         MatCardModule,
@@ -28,7 +38,11 @@ import {MatSelectModule} from '@angular/material/select';
         MatButtonModule,
         MatSnackBarModule,
         MatIconModule,
-        MatSelectModule
+        MatSelectModule,
+        MatDatepickerModule,
+        MatTableModule,
+        MatGridListModule,
+        MatStepperModule
     ]
 })
 export class UiModule {
