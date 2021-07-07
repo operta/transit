@@ -6,6 +6,7 @@ import {UiModule} from '../ui/ui.module';
 import {ShiftReportPageComponent} from './page/shift-report-page/shift-report-page.component';
 import {TunnelRoundDetailPageComponent} from './page/tunnel-round-detail-page/tunnel-round-detail-page.component';
 import {ConstructionModule} from '../construction/construction.module';
+import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ConstructionModule} from '../construction/construction.module';
         CommonModule,
         UiModule,
         DashboardRoutingModule,
-        ConstructionModule
+        ConstructionModule,
+        TranslateModule
     ]
 })
 export class DashboardModule {

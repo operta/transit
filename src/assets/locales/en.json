@@ -6,5 +6,7 @@
     "accessDenied": "Access Denied, authentication required",
     "close": "Close",
     "employeeNotExist": "Your employee profile is not complete, please contact the administrator",
+    "shiftReport": "Shift Report",
+    "tunnelRoundReport": "Tunnel Round Report"
 
 }

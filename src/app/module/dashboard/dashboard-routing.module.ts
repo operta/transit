@@ -19,14 +19,14 @@ const dashboardRoutes: Routes = [
         path: 'shift-report',
         component: ShiftReportPageComponent,
         data: {
-          title: 'Shift Report'
+          title: 'shiftReport'
         }
       },
       {
         path: 'tunnel-round/:roundId/shift/:shiftId',
         component: TunnelRoundDetailPageComponent,
         data: {
-          title: 'Tunnel Round Report'
+          title: 'tunnelRoundReport'
         }
       }
     ]

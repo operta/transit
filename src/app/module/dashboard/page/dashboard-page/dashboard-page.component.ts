@@ -14,7 +14,7 @@ import {Location} from '@angular/common';
     styleUrls: ['./dashboard-page.component.css']
 })
 export class DashboardPageComponent {
-    title = 'Shift Report';
+    title = 'shiftReport';
 
     constructor(private router: Router,
                 private route: ActivatedRoute,
