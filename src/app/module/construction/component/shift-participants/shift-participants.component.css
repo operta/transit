@@ -1,8 +1,19 @@
-.mat-column-column-name, .mat-column-column-role, .mat-column-column-action {
+.mat-column-column-name, .mat-column-column-role, .mat-column-column-action,
+.mat-column-column-add-name, .mat-column-column-add-role, .mat-column-column-add-action{
     padding: 10px 20px;
     font-size: 16px;
 }
 
 mat-card {
     box-shadow: none !important;
+}
+
+
+.mat-form-field {
+    width: 160px;
+    font-size: 14px;
+}
+.mat-select {
+    padding-bottom: 0px;
+    padding-top: 0px;
 }

@@ -1,9 +1,6 @@
 <mat-card>
     <mat-card-subtitle>{{'shiftParticipants' | translate}}</mat-card-subtitle>
     <mat-card-content>
-        <app-employee-select (employeeAddedToShift)="loadShiftParticipants()" [shiftParticipants]="participants"
-                             [shiftId]="shift.id"></app-employee-select>
-        <hr class="mb-4 mt-4">
         <table mat-table [dataSource]="participants" class="mat-elevation-z8">
 
             <!-- Name Column -->
@@ -28,8 +25,48 @@
                 </td>
             </ng-container>
 
+            <!-- Add Name Column -->
+            <ng-container matColumnDef="column-add-name">
+                <td mat-footer-cell *matFooterCellDef>
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'selectEmployee' | translate}}</mat-label>
+                        <mat-select (selectionChange)="onSelectEmployee($event)">
+                            <mat-option *ngFor="let employee of employees$ | async" [value]="employee.id">
+                                {{employee.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </ng-container>
+
+            <!-- Add Role Column -->
+            <ng-container matColumnDef="column-add-role">
+                <td mat-footer-cell *matFooterCellDef>
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'selectRole' | translate}}</mat-label>
+                        <mat-select (selectionChange)="onSelectRole($event)">
+                            <mat-option *ngFor="let role of roles" [value]="role">
+                                {{role | translate}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </ng-container>
+
+            <!-- Add Action Column -->
+            <ng-container matColumnDef="column-add-action">
+                <td mat-footer-cell *matFooterCellDef>
+                    <button class="btn btn-success"  [disabled]="!selectedEmployee || !selectedRole" (click)="addParticipant()">
+                        <span>{{'add' | translate}} <mat-icon>add</mat-icon></span>
+                    </button>
+                </td>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <tr mat-footer-row *matFooterRowDef="addColumns" class="example-first-footer-row"></tr>
+
         </table>
     </mat-card-content>
 </mat-card>
