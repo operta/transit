@@ -3,7 +3,7 @@
         <td align="center" height="50"><br>
             <b>{{'activityPeriod' | translate}}</b>
         </td>
-        <td align="center" height="50"><br>
+        <td align="center" height="50" width="300"><br>
             <b>{{'action' | translate}}</b>
         </td>
         <td align="left" height="50" *ngFor="let slot of hourSlots" colspan="4">
@@ -15,8 +15,8 @@
             <b>{{activity.typeName}}</b>
         </td>
         <td align="center" height="50">
-            <button class="btn btn-danger" (click)="deleteActivity(activity.id)">
-                <mat-icon>delete</mat-icon>
+            <button class="btn btn-danger p-1" (click)="deleteActivity(activity.id)">
+                {{'delete' | translate}} <mat-icon>delete</mat-icon>
             </button>
         </td>
         <td align="center" height="50" width="100" *ngFor="let slot of slots"  [ngStyle]="{'background-color':isActivityInSlot(activity, slot.dateTime)? 'blue' : 'white'}">

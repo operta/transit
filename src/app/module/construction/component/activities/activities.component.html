@@ -1,8 +1,7 @@
 <ng-container *ngIf="round && shift && activities">
     <!--    TODO add tunnel round-->
-    <!--    TODO add measure separate-->
     <!--    TODO comments-->
-    <button class="btn btn-lg btn-success" (click)="goToStepper()">{{'addActivity' | translate}}</button>
+    <button class="btn btn-lg btn-success" (click)="goToStepper()">{{'addActivity' | translate}} <mat-icon>add</mat-icon></button>
     <ng-container *ngIf="activities && activities.length > 0">
         <app-timetable [activities]="activities" [shift]="shift" (activityDeleted)="onActivityDeleted()"></app-timetable>
         <div class="row">
