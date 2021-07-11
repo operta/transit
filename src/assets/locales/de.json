@@ -9,9 +9,12 @@
     "tunnelRoundReport": "Abschlagbericht",
     "activitySaved": "Aktivität gespeichert",
     "activityDeleted": "Aktivität gelöscht",
+    "activityEdited": "Aktivität bearbeitet",
     "addActivityToTunnelRound": "Aktivität zum Abschlag hinzufügen",
+    "editActivity": "Aktivität bearbeiten",
     "next": "Weiter",
     "save": "Speichern",
+    "edit": "Bearbeiten",
     "back": "Züruck",
     "add": "Hinzufügen",
     "delete": "Löschen",
@@ -53,5 +56,7 @@
     "worker": "Arbeiter",
     "foreman": "Drittelführer",
     "german": "Deutsch",
-    "english": "Englisch"
+    "english": "Englisch",
+    "authError": "Sie müssen autorisiert sein",
+    "minutes": "Minuten"
 }

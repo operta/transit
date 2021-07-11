@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddMeasureComponent } from './add-measure.component';
+import { AddEditMeasureComponent } from './add-edit-measure.component';
 
 describe('AddMeasureComponent', () => {
-  let component: AddMeasureComponent;
-  let fixture: ComponentFixture<AddMeasureComponent>;
+  let component: AddEditMeasureComponent;
+  let fixture: ComponentFixture<AddEditMeasureComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddMeasureComponent ]
+      declarations: [ AddEditMeasureComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddMeasureComponent);
+    fixture = TestBed.createComponent(AddEditMeasureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

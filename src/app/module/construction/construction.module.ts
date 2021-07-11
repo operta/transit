@@ -8,17 +8,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {TunnelRoundsComponent} from './component/tunnel-rounds/tunnel-rounds.component';
 import {ShiftParticipantsComponent} from './component/shift-participants/shift-participants.component';
-import {EmployeeSelectComponent} from './component/shift-participants/employee-select/employee-select.component';
 import {TimetableComponent} from './component/timetable/timetable.component';
 import {ActivitiesComponent} from './component/activities/activities.component';
-import {AddActivityComponent} from './page/activity-measure-stepper/add-activity/add-activity.component';
+import {AddEditActivityComponent} from './page/activity-measure-stepper/add-activity/add-edit-activity.component';
 import {ActivityTypeSelectComponent} from './page/activity-measure-stepper/add-activity/activity-type-select/activity-type-select.component';
 import {MeasuresComponent} from './component/measures/measures.component';
-import {AddMeasureComponent} from './page/activity-measure-stepper/add-measure/add-measure.component';
+import {AddEditMeasureComponent} from './page/activity-measure-stepper/add-measure/add-edit-measure.component';
 import {MeasureDefinitionSelectComponent} from './page/activity-measure-stepper/add-measure/measure-definition-select/measure-definition-select.component';
-import {ActivityMeasureStepperComponent} from './page/activity-measure-stepper/activity-measure-stepper.component';
+import {ActivityMeasureFormComponent} from './page/activity-measure-stepper/activity-measure-form.component';
 import {ConstructionRoutingModule} from './construction-routing.module';
-import {AddMeasureListPreviewComponent} from './page/activity-measure-stepper/add-measure/add-measure-list-preview/add-measure-list-preview.component';
 import {SupportDefinitionSelectComponent} from './component/support-definition-select/support-definition-select.component';
 import { SectionDisplayComponent } from './component/section-display/section-display.component';
 import { ShiftDisplayComponent } from './component/shift-display/shift-display.component';
@@ -44,17 +42,15 @@ import {TranslateModule} from '@ngx-translate/core';
         SectionSelectComponent,
         ShiftSelectComponent,
         ShiftParticipantsComponent,
-        EmployeeSelectComponent,
         TunnelRoundsComponent,
         TimetableComponent,
         ActivitiesComponent,
-        AddActivityComponent,
+        AddEditActivityComponent,
         ActivityTypeSelectComponent,
         MeasuresComponent,
-        AddMeasureComponent,
+        AddEditMeasureComponent,
         MeasureDefinitionSelectComponent,
-        ActivityMeasureStepperComponent,
-        AddMeasureListPreviewComponent,
+        ActivityMeasureFormComponent,
         SupportDefinitionSelectComponent,
         SectionDisplayComponent,
         ShiftDisplayComponent,
@@ -65,14 +61,13 @@ import {TranslateModule} from '@ngx-translate/core';
         SectionSelectComponent,
         ShiftSelectComponent,
         ShiftParticipantsComponent,
-        EmployeeSelectComponent,
         TunnelRoundsComponent,
         ActivitiesComponent,
-        AddActivityComponent,
+        AddEditActivityComponent,
         ActivityTypeSelectComponent,
         TimetableComponent,
         MeasuresComponent,
-        AddMeasureComponent,
+        AddEditMeasureComponent,
         MeasureDefinitionSelectComponent,
         SupportDefinitionSelectComponent,
         SectionDisplayComponent,

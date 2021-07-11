@@ -38,8 +38,10 @@ export class Activity extends BaseClass {
             start_time: DateTimeSerializer.serialize(input.startDateTime),
             end_time: DateTimeSerializer.serialize(input.endDateTime),
         }, input);
+        console.log(object);
         delete object.startDateTime;
         delete object.endDateTime;
+        delete object.typeName;
         return object;
     }
 }

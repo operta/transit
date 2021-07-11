@@ -29,7 +29,7 @@ export class ActivitiesComponent implements OnInit, OnChanges {
     }
 
     goToStepper(): void {
-        this.router.navigateByUrl('/construction/add-activity-stepper/round/' + this.round.id + '/shift/' + this.shift.id);
+        this.router.navigateByUrl('/construction/add-activity-form/round/' + this.round.id + '/shift/' + this.shift.id);
     }
 
     onActivityDeleted(): void {

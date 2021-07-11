@@ -1,0 +1,5 @@
+.mat-column-column-name, .mat-column-column-action, .mat-column-column-quantity,
+.mat-column-column-add-name, .mat-column-columnd-add-quantity, .mat-column-column-add-action{
+    padding: 10px 20px;
+    font-size: 16px;
+}

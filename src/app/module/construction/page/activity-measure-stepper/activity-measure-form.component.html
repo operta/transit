@@ -1,0 +1,32 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span class="toolbar-text-center">{{title | translate}}</span>
+        <button mat-icon-button (click)="finish()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<ng-container *ngIf="stepperFormGroup && shift && round">
+    <div class="row p-5">
+        <div class="col-md-4">
+            <h2>{{'activity' | translate}}</h2>
+            <app-add-edit-activity [parentForm]="stepperFormGroup"
+                              [shift]="shift"
+                              [round]="round"
+                              [activities]="activities"
+                              [editActivity]="editActivity"></app-add-edit-activity>
+        </div>
+        <div class="col-md-7">
+            <h2>{{'measures' | translate}}</h2>
+            <app-add-edit-measure [parentForm]="stepperFormGroup"
+                             [round]="round"
+                             [editMeasures]="editMeasures"
+            ></app-add-edit-measure>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-lg btn-success" [disabled]="stepperFormGroup.invalid" (click)="createOrEditActivityAndMeasures()">{{'save' | translate}}</button>
+        </div>
+    </div>
+
+
+</ng-container>

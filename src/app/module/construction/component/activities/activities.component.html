@@ -3,7 +3,7 @@
     <!--    TODO comments-->
     <button class="btn btn-lg btn-success" (click)="goToStepper()">{{'addActivity' | translate}} <mat-icon>add</mat-icon></button>
     <ng-container *ngIf="activities && activities.length > 0">
-        <app-timetable [activities]="activities" [shift]="shift" (activityDeleted)="onActivityDeleted()"></app-timetable>
+        <app-timetable [activities]="activities" [shift]="shift" [round]="round" (activityDeleted)="onActivityDeleted()"></app-timetable>
         <div class="row">
             <div class="col-md-6 custom-border">
                 <app-measures [activities]="activities" [roundId]="round.id"></app-measures>

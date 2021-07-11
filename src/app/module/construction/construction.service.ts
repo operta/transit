@@ -79,7 +79,7 @@ export class ConstructionService {
             );
     }
 
-    getTunnelRounds(sectionId: number, supportDefinitionId: number ): Observable<TunnelRound[]> {
+    getTunnelRounds(sectionId: number, supportDefinitionId: number): Observable<TunnelRound[]> {
         return this.http.get<TunnelRound[]>(`${SERVER_API_URL}/construction.tunnel.round/?q=[["section", "=", ${sectionId}], ["support_definition", "=", ${supportDefinitionId}]]`)
             .pipe(
                 map((res: any[]) => res.map(i => TunnelRound.fromJson(i)))
@@ -103,6 +103,14 @@ export class ConstructionService {
     createActivity(activity: Activity): Observable<any> {
         const obj = Activity.toJson(activity);
         return this.http.post(SERVER_API_URL + /construction.activity/, obj);
+    }
+
+    editActivity(activity: Activity): Observable<any> {
+        const obj = Activity.toJson(activity);
+        return this.http.put(SERVER_API_URL + /construction.activity/ + activity.id + '/', obj, {
+            observe: 'body',
+            responseType: 'text'
+        });
     }
 
     deleteActivity(activityId: number): Observable<any> {

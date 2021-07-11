@@ -50,7 +50,9 @@ export class AppErrorInterceptor implements HttpInterceptor {
         console.log(error);
         switch (error.status) {
             case 401:
-                this.snackBar.open('You need to be authorized to access this resource', 'Close');
+                const problemMessage = this.translateService.instant('authError');
+                const closeMessage = this.translateService.instant('close');
+                this.snackBar.open(problemMessage, closeMessage);
                 handled = true;
                 break;
         }

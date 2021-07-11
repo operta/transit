@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivityMeasureStepperComponent } from './activity-measure-stepper.component';
+import { ActivityMeasureFormComponent } from './activity-measure-form.component';
 
 describe('ActivityMeasureStepperComponent', () => {
-  let component: ActivityMeasureStepperComponent;
-  let fixture: ComponentFixture<ActivityMeasureStepperComponent>;
+  let component: ActivityMeasureFormComponent;
+  let fixture: ComponentFixture<ActivityMeasureFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActivityMeasureStepperComponent ]
+      declarations: [ ActivityMeasureFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActivityMeasureStepperComponent);
+    fixture = TestBed.createComponent(ActivityMeasureFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

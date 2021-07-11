@@ -5,6 +5,8 @@ import * as moment from 'moment';
 import {ConstructionService} from '../../construction.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {TranslateService} from '@ngx-translate/core';
+import {Router} from '@angular/router';
+import {TunnelRound} from '../../model/tunnel-round';
 
 @Component({
     selector: 'app-timetable',
@@ -14,13 +16,15 @@ import {TranslateService} from '@ngx-translate/core';
 export class TimetableComponent implements OnInit {
     @Input() activities: Activity[];
     @Input() shift: Shift;
+    @Input() round: TunnelRound;
     @Output() activityDeleted = new EventEmitter<void>();
     slots: any[];
     hourSlots: any[] = [];
 
     constructor(private constructionService: ConstructionService,
                 private snackBar: MatSnackBar,
-                private translateService: TranslateService) {
+                private translateService: TranslateService,
+                private router: Router) {
     }
 
     ngOnInit(): void {
@@ -70,6 +74,10 @@ export class TimetableComponent implements OnInit {
                 const closeMessage = this.translateService.instant('close');
                 this.snackBar.open(activityDeletedMessage, closeMessage);
             });
+    }
+
+    editActivity(id: number): void {
+        this.router.navigateByUrl('/construction/add-activity-form/round/' + this.round.id + '/shift/' + this.shift.id + '/activity/' + id);
     }
 
 }

@@ -15,9 +15,16 @@
             <b>{{activity.typeName}}</b>
         </td>
         <td align="center" height="50">
-            <button class="btn btn-danger p-1" (click)="deleteActivity(activity.id)">
-                {{'delete' | translate}} <mat-icon>delete</mat-icon>
-            </button>
+            <div class="btn-group">
+                <button class="btn btn-primary p-1" (click)="editActivity(activity.id)">
+                    {{'edit' | translate}} <mat-icon>edit</mat-icon>
+                </button>
+
+                <button class="btn btn-danger p-1" (click)="deleteActivity(activity.id)">
+                    {{'delete' | translate}} <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
         </td>
         <td align="center" height="50" width="100" *ngFor="let slot of slots"  [ngStyle]="{'background-color':isActivityInSlot(activity, slot.dateTime)? 'blue' : 'white'}">
         </td>

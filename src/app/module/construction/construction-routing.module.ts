@@ -1,11 +1,21 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ActivityMeasureStepperComponent} from './page/activity-measure-stepper/activity-measure-stepper.component';
+import {ActivityMeasureFormComponent} from './page/activity-measure-stepper/activity-measure-form.component';
 
 const constructionRoutes: Routes = [
     {
-        path: 'add-activity-stepper/round/:roundId/shift/:shiftId',
-        component: ActivityMeasureStepperComponent
+        path: 'add-activity-form/round/:roundId/shift/:shiftId',
+        component: ActivityMeasureFormComponent,
+        data: {
+            title: 'addActivityToTunnelRound'
+        }
+    },
+    {
+        path: 'add-activity-form/round/:roundId/shift/:shiftId/activity/:activityId',
+        component: ActivityMeasureFormComponent,
+        data: {
+            title: 'editActivity'
+        }
     }
 ];
 

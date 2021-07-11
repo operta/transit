@@ -9,9 +9,12 @@
     "tunnelRoundReport": "Tunnel Round Report",
     "activitySaved": "Activity saved",
     "activityDeleted": "Activity deleted",
+    "activityEdited": "Activity edited",
     "addActivityToTunnelRound": "Add activity to tunnel round",
+    "editActivity": "Edit activity",
     "next": "Next",
     "save": "Save",
+    "edit": "Edit",
     "back": "Back",
     "add": "Add",
     "delete": "Delete",
@@ -53,5 +56,7 @@
     "worker": "Worker",
     "foreman": "Foreman",
     "german": "German",
-    "english": "English"
+    "english": "English",
+    "authError": "You need to be authorized to access this resource",
+    "minutes": "Minutes"
 }

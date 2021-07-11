@@ -9,14 +9,17 @@ export class Measure extends BaseClass {
     measure_definition: number;
     activityName: string;
 
-    constructor(name: string, unit: string, quantity: number, round: number, activity: number, measure_definition: number) {
-        super();
+
+    constructor(id?: number, name?: string, unit?: string, quantity?: number, round?: number, activity?: number,
+                measure_definition?: number, activityName?: string) {
+        super(id);
         this.name = name;
         this.unit = unit;
         this.quantity = quantity;
         this.round = round;
         this.activity = activity;
         this.measure_definition = measure_definition;
+        this.activityName = activityName;
     }
 
     static fromJson(input: any): Measure {
