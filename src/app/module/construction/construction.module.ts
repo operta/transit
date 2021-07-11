@@ -10,12 +10,12 @@ import {TunnelRoundsComponent} from './component/tunnel-rounds/tunnel-rounds.com
 import {ShiftParticipantsComponent} from './component/shift-participants/shift-participants.component';
 import {TimetableComponent} from './component/timetable/timetable.component';
 import {ActivitiesComponent} from './component/activities/activities.component';
-import {AddEditActivityComponent} from './page/activity-measure-stepper/add-activity/add-edit-activity.component';
-import {ActivityTypeSelectComponent} from './page/activity-measure-stepper/add-activity/activity-type-select/activity-type-select.component';
+import {AddEditActivityComponent} from './page/activity-measure-form/add-edit-activity/add-edit-activity.component';
+import {ActivityTypeSelectComponent} from './page/activity-measure-form/add-edit-activity/activity-type-select/activity-type-select.component';
 import {MeasuresComponent} from './component/measures/measures.component';
-import {AddEditMeasureComponent} from './page/activity-measure-stepper/add-measure/add-edit-measure.component';
-import {MeasureDefinitionSelectComponent} from './page/activity-measure-stepper/add-measure/measure-definition-select/measure-definition-select.component';
-import {ActivityMeasureFormComponent} from './page/activity-measure-stepper/activity-measure-form.component';
+import {AddDeleteMeasureComponent} from './page/activity-measure-form/add-delete-measure/add-delete-measure.component';
+import {MeasureDefinitionSelectComponent} from './page/activity-measure-form/add-delete-measure/measure-definition-select/measure-definition-select.component';
+import {ActivityMeasureFormComponent} from './page/activity-measure-form/activity-measure-form.component';
 import {ConstructionRoutingModule} from './construction-routing.module';
 import {SupportDefinitionSelectComponent} from './component/support-definition-select/support-definition-select.component';
 import { SectionDisplayComponent } from './component/section-display/section-display.component';
@@ -48,7 +48,7 @@ import {TranslateModule} from '@ngx-translate/core';
         AddEditActivityComponent,
         ActivityTypeSelectComponent,
         MeasuresComponent,
-        AddEditMeasureComponent,
+        AddDeleteMeasureComponent,
         MeasureDefinitionSelectComponent,
         ActivityMeasureFormComponent,
         SupportDefinitionSelectComponent,
@@ -67,7 +67,7 @@ import {TranslateModule} from '@ngx-translate/core';
         ActivityTypeSelectComponent,
         TimetableComponent,
         MeasuresComponent,
-        AddEditMeasureComponent,
+        AddDeleteMeasureComponent,
         MeasureDefinitionSelectComponent,
         SupportDefinitionSelectComponent,
         SectionDisplayComponent,

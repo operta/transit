@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ActivityMeasureFormComponent} from './page/activity-measure-stepper/activity-measure-form.component';
+import {ActivityMeasureFormComponent} from './page/activity-measure-form/activity-measure-form.component';
 
 const constructionRoutes: Routes = [
     {

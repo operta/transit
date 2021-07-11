@@ -6,11 +6,11 @@ import {TunnelRound} from '../../../model/tunnel-round';
 import {Measure} from '../../../model/measure';
 
 @Component({
-    selector: 'app-add-edit-measure',
-    templateUrl: './add-edit-measure.component.html',
-    styleUrls: ['./add-edit-measure.component.css']
+    selector: 'app-add-delete-measure',
+    templateUrl: './add-delete-measure.component.html',
+    styleUrls: ['./add-delete-measure.component.css']
 })
-export class AddEditMeasureComponent implements OnInit, OnChanges {
+export class AddDeleteMeasureComponent implements OnInit, OnChanges {
     @Input() parentForm: FormGroup;
     @Input() round: TunnelRound;
     @Input() editMeasures: Measure[];
