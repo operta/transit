@@ -13,6 +13,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class ShiftSelectComponent implements OnChanges {
     @Input() sectionId: number;
+    @Input() selectedShift: Shift;
     @Output() shiftSelected = new EventEmitter<any>();
     openShifts$: Observable<Shift[]>;
 
@@ -69,5 +70,12 @@ export class ShiftSelectComponent implements OnChanges {
 
     onShiftSelected(event): void {
         this.shiftSelected.emit(event.value);
+    }
+
+    compareFunction(o1: Shift, o2: Shift): boolean {
+        if (o1 && o2) {
+            return o1.id === o2.id;
+        }
+        return false;
     }
 }

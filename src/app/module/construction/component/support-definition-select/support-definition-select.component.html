@@ -1,8 +1,10 @@
 <mat-form-field appearance="outline">
     <mat-label>{{'selectSupportDefinition' | translate}}</mat-label>
-    <mat-select (selectionChange)="onDefinitionSelected($event)">
+    <mat-select (selectionChange)="onDefinitionSelected($event)"
+                [(value)]="selectedDefinition"
+                [compareWith]="compareFunction">
         <mat-option *ngFor="let definition of definitions$ | async" [value]="definition">
-            {{definition.name}}
+            {{definition.name}} | {{definition.crossSectionName}} | {{definition.typeName}}
         </mat-option>
     </mat-select>
 </mat-form-field>

@@ -1,6 +1,8 @@
 <mat-form-field appearance="outline">
     <mat-label>{{'selectShift' | translate}}</mat-label>
-    <mat-select (selectionChange)="onShiftSelected($event)">
+    <mat-select (selectionChange)="onShiftSelected($event)"
+                [(value)]="selectedShift"
+                [compareWith]="compareFunction">
         <mat-option *ngFor="let shift of openShifts$ | async" [value]="shift">
             {{shift.startDateTime.toDate() | date: 'dd/MM/yyyy HH:mm'}} - {{shift.endDateTime.toDate() | date: 'HH:mm'}}
         </mat-option>

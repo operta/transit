@@ -7,6 +7,7 @@ import {ShiftReportPageComponent} from './page/shift-report-page/shift-report-pa
 import {TunnelRoundDetailPageComponent} from './page/tunnel-round-detail-page/tunnel-round-detail-page.component';
 import {ConstructionModule} from '../construction/construction.module';
 import {TranslateModule} from '@ngx-translate/core';
+import {HistoryService} from './history.service';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import {TranslateModule} from '@ngx-translate/core';
         DashboardRoutingModule,
         ConstructionModule,
         TranslateModule
+    ],
+    providers: [
+        HistoryService
     ]
 })
 export class DashboardModule {

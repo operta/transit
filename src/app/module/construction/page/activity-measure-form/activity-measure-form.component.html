@@ -18,15 +18,13 @@
         </div>
         <div class="col-md-7">
             <h2>{{'measures' | translate}}</h2>
-            <app-add-edit-measure [parentForm]="stepperFormGroup"
+            <app-add-delete-measure [parentForm]="stepperFormGroup"
                              [round]="round"
                              [editMeasures]="editMeasures"
-            ></app-add-edit-measure>
+            ></app-add-delete-measure>
         </div>
         <div class="col-md-1">
             <button class="btn btn-lg btn-success" [disabled]="stepperFormGroup.invalid" (click)="createOrEditActivityAndMeasures()">{{'save' | translate}}</button>
         </div>
     </div>
-
-
 </ng-container>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ConstructionService} from '../../construction.service';
 import {Section} from '../../model/section';
 import {Observable} from 'rxjs';
@@ -9,6 +9,7 @@ import {Observable} from 'rxjs';
     styleUrls: ['./section-select.component.css']
 })
 export class SectionSelectComponent implements OnInit {
+    @Input() selectedSection: Section;
     @Output() sectionSelected = new EventEmitter<Section>();
     sections$: Observable<Section[]>;
 
@@ -21,5 +22,12 @@ export class SectionSelectComponent implements OnInit {
 
     onSectionSelected(event): void {
         this.sectionSelected.emit(event.value);
+    }
+
+    compareFunction(o1: Section, o2: Section): boolean {
+        if (o1 && o2) {
+            return o1.id === o2.id;
+        }
+        return false;
     }
 }

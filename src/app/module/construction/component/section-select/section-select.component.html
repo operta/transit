@@ -1,8 +1,12 @@
 <mat-form-field appearance="outline">
     <mat-label>{{'selectSection' | translate}}</mat-label>
-    <mat-select (selectionChange)="onSectionSelected($event)">
+    <mat-select (selectionChange)="onSectionSelected($event)"
+                [(value)]="selectedSection"
+                [compareWith]="compareFunction">
+        <mat-option>None</mat-option>
         <mat-option *ngFor="let section of sections$ | async" [value]="section">
             {{section.name}}
         </mat-option>
     </mat-select>
 </mat-form-field>
+
