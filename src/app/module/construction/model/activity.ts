@@ -14,8 +14,8 @@ export class Activity extends BaseClass {
     measures: any[];
 
     constructor(round?: number, shift?: number, type?: number, startDateTime: Moment = moment(),
-                endDateTime: Moment = moment(), comment?: string, measures?: any[]) {
-        super();
+                endDateTime: Moment = moment(), comment?: string, measures?: any[], id?: any) {
+        super(id);
         this.type = type;
         this.round = round;
         this.shift = shift;

@@ -7,8 +7,8 @@ export class SupportDefinition extends BaseClass {
     typeName: string;
     crossSectionName: string;
 
-    constructor(name: string, tunnelingClass: string, section: number, typeName: string, crossSectionName: string) {
-        super();
+    constructor(name: string, tunnelingClass: string, section: number, typeName: string, crossSectionName: string, id?: number) {
+        super(id);
         this.name = name;
         this.tunnelingClass = tunnelingClass;
         this.section = section;

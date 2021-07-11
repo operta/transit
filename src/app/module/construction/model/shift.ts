@@ -13,8 +13,9 @@ export class Shift extends BaseClass {
     activities: Activity[];
     state: number;
 
-    constructor(section?: number, startDateTime: Moment = moment(), endDateTime: Moment = moment(), comment?: string, participation?: number[], state?: number) {
-        super();
+    constructor(section?: number, startDateTime: Moment = moment(), endDateTime: Moment = moment(),
+                comment?: string, participation?: number[], state?: number, id?: number) {
+        super(id);
         this.section = section;
         this.startDateTime = startDateTime;
         this.endDateTime = endDateTime;

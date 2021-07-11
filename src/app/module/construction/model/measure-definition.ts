@@ -4,8 +4,8 @@ export class MeasureDefinition extends BaseClass {
     name: string;
     unit: string;
 
-    constructor(name: string, unit: string) {
-        super();
+    constructor(name: string, unit: string, id?:number) {
+        super(id);
         this.name = name;
         this.unit = unit;
     }
