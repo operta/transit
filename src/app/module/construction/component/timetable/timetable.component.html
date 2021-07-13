@@ -15,13 +15,13 @@
             <b>{{activity.typeName}}</b>
         </td>
         <td align="center" height="50">
-            <div class="btn-group">
-                <button class="btn btn-primary p-1" (click)="editActivity(activity.id)">
-                    {{'edit' | translate}} <mat-icon>edit</mat-icon>
+            <div class="btn-group" *ngIf="isEditable">
+                <button class="btn btn-primary" (click)="editActivity(activity.id)">
+                    {{'edit' | translate}}
                 </button>
 
-                <button class="btn btn-danger p-1" (click)="deleteActivity(activity.id)">
-                    {{'delete' | translate}} <mat-icon>delete</mat-icon>
+                <button class="btn btn-danger" (click)="deleteActivity(activity.id)">
+                    {{'delete' | translate}}
                 </button>
             </div>
 

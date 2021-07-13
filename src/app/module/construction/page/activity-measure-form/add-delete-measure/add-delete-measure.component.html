@@ -20,7 +20,6 @@
                     <th mat-header-cell *matHeaderCellDef> {{'action' | translate}} </th>
                     <td mat-cell *matCellDef="let i = index">
                         <button class="btn btn-danger" (click)="deleteElement(i)">{{'delete' | translate}}
-                            <mat-icon>delete</mat-icon>
                         </button>
                     </td>
                 </ng-container>
@@ -48,7 +47,6 @@
                     <td mat-footer-cell *matFooterCellDef>
                         <button class="btn btn-success" [disabled]="measureFormGroup.invalid" (click)="addMeasure()">
                             {{'add' | translate}}
-                            <mat-icon>add</mat-icon>
                         </button>
                     </td>
                 </ng-container>

@@ -23,6 +23,7 @@ import { ShiftDisplayComponent } from './component/shift-display/shift-display.c
 import { SupportDefinitionDisplayComponent } from './component/support-definition-display/support-definition-display.component';
 import { TunnelRoundDisplayComponent } from './component/tunnel-round-display/tunnel-round-display.component';
 import {TranslateModule} from '@ngx-translate/core';
+import { TunnelRoundFormComponent } from './page/tunnel-round-form/tunnel-round-form.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import {TranslateModule} from '@ngx-translate/core';
         ShiftDisplayComponent,
         SupportDefinitionDisplayComponent,
         TunnelRoundDisplayComponent,
+        TunnelRoundFormComponent,
     ],
     exports: [
         SectionSelectComponent,
@@ -73,7 +75,8 @@ import {TranslateModule} from '@ngx-translate/core';
         SectionDisplayComponent,
         ShiftDisplayComponent,
         SupportDefinitionDisplayComponent,
-        TunnelRoundDisplayComponent
+        TunnelRoundDisplayComponent,
+        TunnelRoundFormComponent
     ]
 })
 export class ConstructionModule {

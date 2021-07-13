@@ -8,6 +8,7 @@
     "shiftReport": "Shift Report",
     "tunnelRoundReport": "Tunnel Round Report",
     "activitySaved": "Activity saved",
+    "tunnelRoundSaved": "Tunnel Round saved",
     "activityDeleted": "Activity deleted",
     "activityEdited": "Activity edited",
     "addActivityToTunnelRound": "Add activity to tunnel round",
@@ -58,5 +59,11 @@
     "german": "German",
     "english": "English",
     "authError": "You need to be authorized to access this resource",
-    "minutes": "Minutes"
+    "minutes": "Minutes",
+    "meters": "Meters",
+    "createTunnelRound": "Create Tunnel Round",
+    "editTunnelRound": "Edit Tunnel Round",
+    "state": "State",
+    "draft": "draft",
+    "confirmed": "confirmed"
 }

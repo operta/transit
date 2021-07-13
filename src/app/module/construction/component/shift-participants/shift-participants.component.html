@@ -20,7 +20,6 @@
                 <th mat-header-cell *matHeaderCellDef> {{'action' | translate}}</th>
                 <td mat-cell *matCellDef="let element">
                     <button class="btn btn-danger" (click)="deleteParticipant(element.id)">{{'delete' | translate}}
-                        <mat-icon>delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
@@ -57,7 +56,7 @@
             <ng-container matColumnDef="column-add-action">
                 <td mat-footer-cell *matFooterCellDef>
                     <button class="btn btn-success"  [disabled]="!selectedEmployee || !selectedRole" (click)="addParticipant()">
-                        <span>{{'add' | translate}} <mat-icon>add</mat-icon></span>
+                        <span>{{'add' | translate}}</span>
                     </button>
                 </td>
             </ng-container>

@@ -8,6 +8,7 @@
     "shiftReport": "Schichtbericht",
     "tunnelRoundReport": "Abschlagbericht",
     "activitySaved": "Aktivität gespeichert",
+    "tunnelRoundSaved": "Abschläg gespeichert",
     "activityDeleted": "Aktivität gelöscht",
     "activityEdited": "Aktivität bearbeitet",
     "addActivityToTunnelRound": "Aktivität zum Abschlag hinzufügen",
@@ -58,5 +59,11 @@
     "german": "Deutsch",
     "english": "Englisch",
     "authError": "Sie müssen autorisiert sein",
-    "minutes": "Minuten"
+    "minutes": "Minuten",
+    "meters": "Meter",
+    "createTunnelRound": "Abschläg erstellen",
+    "editTunnelRound": "Abschläg bearbeiten",
+    "state": "Status",
+    "draft": "Entwurft",
+    "confirmed": "Bestätigt"
 }

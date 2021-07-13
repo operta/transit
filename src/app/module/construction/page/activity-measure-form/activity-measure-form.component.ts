@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormGroup} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
 import {TunnelRound} from '../../model/tunnel-round';
 import {ConstructionService} from '../../construction.service';
@@ -35,15 +35,15 @@ export class ActivityMeasureFormComponent implements OnInit {
                 private location: Location,
                 private snackBar: MatSnackBar,
                 private translateService: TranslateService) {
+    }
+
+    ngOnInit(): void {
         this.title = this.route.snapshot.data.title;
         this.route.params.subscribe(params => {
             this.shiftId = +params.shiftId;
             this.roundId = +params.roundId;
             this.activityId = +params.activityId;
         });
-    }
-
-    ngOnInit(): void {
         this.stepperFormGroup = new FormGroup({
             activity: new FormGroup({}),
             measures: new FormArray([])
@@ -77,7 +77,6 @@ export class ActivityMeasureFormComponent implements OnInit {
             activity.id = this.editActivity.id;
             this.constructionService.editActivity(activity).subscribe((res) => {
                 this.createOrDeleteMeasures(this.editActivity.id).subscribe(
-
                     (res) => {
                         console.log('creating and delting measures')
                         console.log(res);
@@ -114,19 +113,13 @@ export class ActivityMeasureFormComponent implements OnInit {
         const alteredMeasures: Measure[] = this.stepperFormGroup.get('measures').value.map(m => this.createMeasure(m, activityId));
         const measuresToAdd = alteredMeasures.filter(m => m.id === null);
         const measuresToDelete = oldMeasures.filter(em => !alteredMeasures.map(am => am.id).includes(em.id));
-        console.log(oldMeasures);
-        console.log(alteredMeasures);
-        console.log(measuresToAdd);
-        console.log(measuresToDelete);
+
         const measureAddRequests = measuresToAdd
             .map(measure => this.constructionService.createMeasure(measure));
 
         const measureDeleteRequests = measuresToDelete
             .map(m => m.id)
             .map(id => this.constructionService.deleteMeasure(id));
-
-        console.log('measure add requests');
-        console.log(measureAddRequests);
 
         return forkJoin(measureAddRequests.concat(measureDeleteRequests));
     }

@@ -4,7 +4,14 @@
             <app-shift-display [shift]="shift"></app-shift-display>
         </div>
         <div class="col-md-6">
-            <app-tunnel-round-display [tunnelRound]="round"></app-tunnel-round-display>
+            <div class="row">
+                <div class="col-md-8">
+                    <app-tunnel-round-display [tunnelRound]="round"></app-tunnel-round-display>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary" (click)="editRound(round.id)">{{'editTunnelRound' | translate}}</button>
+                </div>
+            </div>
         </div>
     </div>
     <app-activities [shift]="shift" [round]="round"></app-activities>

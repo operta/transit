@@ -12,6 +12,7 @@ import {map} from 'rxjs/operators';
 export class MeasuresComponent implements OnInit, OnChanges {
     @Input() activities: Activity[];
     @Input() roundId: number;
+    @Input() isEditable: boolean;
     measures: Measure[] = [];
 
     displayedColumns: string[] = ['column-name', 'column-unit', 'column-quantity', 'column-activity', 'column-action'];

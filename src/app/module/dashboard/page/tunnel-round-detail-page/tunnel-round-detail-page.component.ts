@@ -26,4 +26,8 @@ export class TunnelRoundDetailPageComponent implements OnInit {
 
     ngOnInit(): void {
     }
+
+    editRound(roundId: number): void {
+        this.router.navigateByUrl(`/construction/add-tunnel-round-form/round/${roundId}`);
+    }
 }

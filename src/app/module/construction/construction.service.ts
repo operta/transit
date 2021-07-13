@@ -93,6 +93,19 @@ export class ConstructionService {
             );
     }
 
+    createTunnelRound(round: TunnelRound): Observable<any> {
+        const obj = TunnelRound.toJson(round);
+        return this.http.post(SERVER_API_URL + /construction.tunnel.round/, obj);
+    }
+
+    editTunnelRound(round: TunnelRound): Observable<any> {
+        const obj = TunnelRound.toJson(round);
+        return this.http.put(SERVER_API_URL + /construction.tunnel.round/ + round.id + '/', obj, {
+            observe: 'body',
+            responseType: 'text'
+        });
+    }
+
     getActivities(shiftId: number, roundId: number): Observable<Activity[]> {
         return this.http.get<Activity[]>(`${SERVER_API_URL}/construction.activity/?q=[["round", "=", ${roundId}], ["shift", "=", ${shiftId}]]`)
             .pipe(
@@ -143,6 +156,13 @@ export class ConstructionService {
 
     deleteMeasure(measureId: number): Observable<any> {
         return this.http.delete(SERVER_API_URL + /construction.tunnel.measure/ + measureId + '/', {
+            observe: 'body',
+            responseType: 'text'
+        });
+    }
+
+    deleteRound(roundId: number): Observable<any> {
+        return this.http.delete(SERVER_API_URL + /construction.tunnel.round/ + roundId + '/', {
             observe: 'body',
             responseType: 'text'
         });

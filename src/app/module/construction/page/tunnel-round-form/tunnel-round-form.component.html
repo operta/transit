@@ -1,0 +1,46 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span class="toolbar-text-center">{{title | translate}}</span>
+        <button mat-icon-button (click)="finish()">
+            <mat-icon>clear</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<ng-container *ngIf="roundFormGroup">
+    <mat-card>
+        <mat-card-content class="text-center">
+            <form [formGroup]="roundFormGroup">
+                <div class="row">
+                    <div class="col-md-12 mb-5 mt-5">
+                        <div class="btn-block">
+                            <button class="btn btn-lg btn-danger btn-position-fix" (click)="subtractChainage(inputSC, 'startChainage')">-</button>
+                            &nbsp;
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{'startChainage' | translate}} {{'meters' | translate}}</mat-label>
+                                <input #inputSC matInput type="number" step="0.01" [max]="roundFormGroup.get('endChainage').value" formControlName="startChainage"/>
+                            </mat-form-field>
+                            &nbsp;
+                            <button class="btn btn-lg btn-success btn-position-fix" (click)="addChainage(inputSC, 'startChainage')">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-5">
+                        <div class="btn-block">
+                            <button class="btn btn-lg btn-danger btn-position-fix" (click)="subtractChainage(inputEC, 'endChainage')">-</button>
+                            &nbsp;
+                            <mat-form-field appearance="outline">
+                                <mat-label>{{'endChainage' | translate}} {{'meters' | translate}}</mat-label>
+                                <input #inputEC matInput type="number" step="0.01" formControlName="endChainage"/>
+                            </mat-form-field>
+                            &nbsp;
+                            <button class="btn btn-lg btn-success btn-position-fix" (click)="addChainage(inputEC, 'endChainage')">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-lg btn-success" [disabled]="roundFormGroup.invalid" (click)="createRound()">{{'save' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
+

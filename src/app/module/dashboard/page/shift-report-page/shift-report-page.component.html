@@ -21,10 +21,10 @@
 </mat-grid-list>
 <ng-container *ngIf="shift && section && supportDefinition">
     <div class="row">
-        <div class="col-md-6 custom-border">
+        <div class="col-md-5 custom-border">
             <app-shift-participants [shift]="shift"></app-shift-participants>
         </div>
-        <div class="col-md-6 custom-border">
+        <div class="col-md-7 custom-border">
             <app-tunnel-rounds [shift]="shift" [sectionId]="section.id" [supportDefinition]="supportDefinition"></app-tunnel-rounds>
         </div>
     </div>

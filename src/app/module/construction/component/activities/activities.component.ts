@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class ActivitiesComponent implements OnInit, OnChanges {
     @Input() shift: Shift;
     @Input() round: TunnelRound;
+    isEditable = true;
     activities: Activity[];
 
     constructor(private constructionService: ConstructionService,
@@ -25,6 +26,9 @@ export class ActivitiesComponent implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
+        if(this.round){
+            this.isEditable = this.round.state === 'draft';
+        }
         this.loadActivities(this.shift.id, this.round.id);
     }
 

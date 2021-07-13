@@ -17,6 +17,7 @@ export class TimetableComponent implements OnInit {
     @Input() activities: Activity[];
     @Input() shift: Shift;
     @Input() round: TunnelRound;
+    @Input() isEditable: boolean;
     @Output() activityDeleted = new EventEmitter<void>();
     slots: any[];
     hourSlots: any[] = [];

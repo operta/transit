@@ -7,24 +7,25 @@ export class TunnelRound extends BaseClass {
     endChainage: number;
     comment: string;
     state: any;
-    activities: Activity[];
+    supportDefinition: number;
 
 
-    constructor(id?: number, section?: number, startChainage?: number, endChainage?: number,
-                comment?: string, state?: any, activities?: Activity[]) {
+    constructor(id?: number, section?: number, startChainage?: number, endChainage?: number, supportDefinition?: number,
+                comment?: string, state?: any) {
         super(id);
         this.section = section;
         this.startChainage = startChainage;
         this.endChainage = endChainage;
+        this.supportDefinition = supportDefinition;
         this.comment = comment;
         this.state = state;
-        this.activities = activities;
     }
 
     static fromJson(input: any): TunnelRound {
         const object: TunnelRound = Object.assign(new TunnelRound(), input);
         object.startChainage = input.start_chainage;
         object.endChainage = input.end_chainage;
+        object.supportDefinition = input.support_definition;
         return object;
     }
 
@@ -32,9 +33,11 @@ export class TunnelRound extends BaseClass {
         const object = Object.assign({
             start_chainage: input.startChainage,
             end_chainage: input.endChainage,
+            support_definition: input.supportDefinition
         }, input);
         delete object.startChainage;
         delete object.endChainage;
+        delete object.supportDefinition;
         return object;
     }
 }
